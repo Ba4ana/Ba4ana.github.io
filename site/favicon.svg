@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Бачана">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#23436a"/>
+      <stop offset="1" stop-color="#0d1828"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#4c7cae" stroke-opacity=".75" stroke-width="1.5"/>
+  <path d="M21 16v32h14c8.4 0 13.5-3.6 13.5-9 0-4.4-3.2-7.5-8-8.1 3.7-.8 6.2-3.2 6.2-7.1 0-4.7-4.4-7.8-11.7-7.8H21Zm10 7h4.5c2.2 0 3.4 1 3.4 2.7s-1.2 2.7-3.4 2.7H31V23Zm0 12h5.3c2.9 0 4.5 1 4.5 3.1s-1.6 3-4.5 3H31v-6.1Z" fill="#e5f3ff"/>
+  <circle cx="51" cy="48" r="4" fill="#75bbff"/>
+</svg>

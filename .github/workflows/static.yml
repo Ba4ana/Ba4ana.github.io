@@ -1,43 +1,102 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Публикация сайта
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/static.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/static.yml"
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: github-pages
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить исходники
+        uses: actions/checkout@v4
+      - name: Проверить JavaScript
+        run: node --check site/app.js
+      - name: Проверить структуру и локальные ссылки
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+
+          root = Path("site")
+          required = ["index.html", "styles.css", "app.js", "favicon.svg", "robots.txt", "sitemap.xml"]
+          for name in required:
+              assert (root / name).is_file(), f"Отсутствует файл: {name}"
+
+          class LocalLinks(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.targets = []
+                  self.ids = set()
+                  self.anchor_targets = []
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if "id" in attrs:
+                      assert attrs["id"] not in self.ids, f"Повторяющийся id: {attrs['id']}"
+                      self.ids.add(attrs["id"])
+                  for key in ("href", "src"):
+                      value = attrs.get(key)
+                      if not value:
+                          continue
+                      if value.startswith("#"):
+                          self.anchor_targets.append(value[1:])
+                      elif not value.startswith(("http://", "https://", "mailto:", "tel:", "data:")):
+                          self.targets.append(value)
+
+          text = (root / "index.html").read_text(encoding="utf-8")
+          assert '<html lang="ru">' in text
+          assert '<meta name="viewport"' in text
+          assert "<title>" in text
+          assert "http://" not in text, "Недопустимый внешний HTTP-ресурс"
+          parser = LocalLinks()
+          parser.feed(text)
+          for target in parser.anchor_targets:
+              assert target in parser.ids, f"Ссылка на отсутствующий якорь: #{target}"
+          for target in parser.targets:
+              parsed = urlsplit(target)
+              clean = unquote(parsed.path)
+              assert (root / clean).is_file(), f"Ссылка на отсутствующий файл: {target}"
+          print("HTML-структура и локальные ресурсы проверены")
+          PY
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Получить исходники
         uses: actions/checkout@v4
-      - name: Setup Pages
+      - name: Настроить Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
+      - name: Собрать артефакт сайта
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
+          path: "./site"
+      - name: Опубликовать сайт
         id: deployment
         uses: actions/deploy-pages@v4

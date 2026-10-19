@@ -1,6 +1,31 @@
-# [Ba4ana.github.io](https://ba4ana.github.io/)
-Страница приветствия
+# Ba4ana.github.io
 
-## Версионирование Git
+Персональный сайт Бачана: разработка, автоматизация, технологии и открытые проекты.
 
-Для коммитов ветки `main` действует схема `v.MAJOR.MINOR.PATCH`. Новый `PATCH` не превышает `99`; после `v.X.Y.99` следующий коммит получает `v.X.(Y+1).1`. Старые номера не переписываются. Правило проверяется через [GitHub Actions](.github/workflows/version-policy.yml), общий источник — [инструкции ai-passport](https://github.com/Ba4ana/ai-passport/blob/main/AGENTS.md).
+**Адрес сайта:** https://ba4ana.github.io/
+
+## Устройство проекта
+
+- `site/index.html` — содержимое и семантическая структура страницы;
+- `site/styles.css` — оформление, адаптивная вёрстка и анимации;
+- `site/app.js` — мобильная навигация, анимации появления и актуальный год;
+- `site/favicon.svg`, `site/robots.txt`, `site/sitemap.xml` — базовые веб-ресурсы;
+- `.github/workflows/static.yml` — проверка и публикация содержимого каталога `site/` через GitHub Pages.
+
+Сайт на русском языке, без внешних JavaScript/CSS-фреймворков, аналитики и сторонних шрифтов. Без JavaScript основное содержимое остаётся доступным.
+
+## Локальный запуск
+
+Из корня репозитория:
+
+```bash
+python3 -m http.server 8000 --directory site
+```
+
+Открыть http://127.0.0.1:8000/. Проверить синтаксис скрипта командой `node --check site/app.js`.
+
+## Публикация
+
+При изменении файлов сайта в `main` GitHub Actions проверяет структуру, локальные ссылки и JavaScript, затем публикует **только каталог `site/`**. README и настройки GitHub не входят в содержимое сайта.
+
+Результат публикации проверяется через [GitHub Actions](https://github.com/Ba4ana/Ba4ana.github.io/actions) и адрес сайта.

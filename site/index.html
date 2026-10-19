@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a101b">
+  <meta name="description" content="Бачана — разработка, автоматизация и практичные инструменты для Linux и Windows. Проекты, технологии и контакты.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Бачана — разработка и автоматизация">
+  <meta property="og:description" content="Создаю инструменты, которые делают сложные системные задачи проще.">
+  <meta property="og:url" content="https://ba4ana.github.io/">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://ba4ana.github.io/">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Бачана — разработка и автоматизация</title>
+  <script defer src="./app.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Бачана",
+    "url": "https://ba4ana.github.io/",
+    "sameAs": ["https://github.com/Ba4ana", "https://winbuff.ru/"],
+    "knowsAbout": ["Python", "Bash", "PowerShell", "Linux", "Windows", "Git"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Бачана — на главную">
+        <span class="brand-icon" aria-hidden="true">B<span>.</span></span>
+        <span class="brand-wordmark">BA4ANA<span class="brand-wordmark-sub">Разработка и автоматизация</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Основная навигация">
+        <a href="#about">Обо мне</a>
+        <a href="#stack">Технологии</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a class="header-link" href="https://github.com/Ba4ana" target="_blank" rel="noopener noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero section-grid" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> ПРИВЕТ, Я БАЧАНА</div>
+          <h1 id="hero-title">Сложные задачи.<br><span class="headline-accent">Простые решения.</span></h1>
+          <p class="hero-lead">Разрабатываю инструменты для автоматизации, настройки и обслуживания систем. Люблю понятный код, продуманные процессы и результат, который можно повторить.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Посмотреть проекты <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#about">Узнать больше <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-footnote"><span class="footnote-line" aria-hidden="true"></span> Python / Bash / PowerShell / Linux / Windows</p>
+        </div>
+
+        <div class="hero-art reveal" aria-label="Иллюстрация моего подхода к работе">
+          <div class="art-grid" aria-hidden="true"></div>
+          <div class="art-orbit art-orbit-one" aria-hidden="true"></div>
+          <div class="art-orbit art-orbit-two" aria-hidden="true"></div>
+          <div class="process-card">
+            <div class="process-top">
+              <span class="process-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>ПРОЦЕСС / 001</span>
+              <span class="process-top-icon" aria-hidden="true">⌘</span>
+            </div>
+            <div class="process-main">
+              <p class="process-caption">ОТ ИДЕИ ДО РЕЗУЛЬТАТА</p>
+              <ol class="process-steps">
+                <li>
+                  <span class="step-index">01</span>
+                  <span class="step-copy"><strong>Разобраться</strong><small>Задача, контекст, ограничения</small></span>
+                  <span class="step-check" aria-hidden="true">✓</span>
+                </li>
+                <li>
+                  <span class="step-index">02</span>
+                  <span class="step-copy"><strong>Автоматизировать</strong><small>Логика, сценарий, реализация</small></span>
+                  <span class="step-check" aria-hidden="true">✓</span>
+                </li>
+                <li>
+                  <span class="step-index">03</span>
+                  <span class="step-copy"><strong>Проверить</strong><small>Тесты, устойчивость, результат</small></span>
+                  <span class="step-check" aria-hidden="true">✓</span>
+                </li>
+              </ol>
+              <div class="process-bottom">
+                <span><i class="signal-dot" aria-hidden="true"></i> ПРОДУМАННЫЙ ПОДХОД</span>
+                <span class="process-symbol" aria-hidden="true">/&gt;_</span>
+              </div>
+            </div>
+          </div>
+          <div class="art-chip art-chip-a" aria-hidden="true"><span>✧</span> ясность</div>
+          <div class="art-chip art-chip-b" aria-hidden="true">создать<span> ↗</span></div>
+        </div>
+      </div>
+      <div class="hero-baseline" aria-hidden="true"></div>
+    </section>
+
+    <section class="intro-strip" aria-label="Основные направления">
+      <div class="container strip-inner">
+        <span>АВТОМАТИЗАЦИЯ СИСТЕМ</span><span class="strip-star" aria-hidden="true">✳</span>
+        <span>РАЗРАБОТКА ИНСТРУМЕНТОВ</span><span class="strip-star" aria-hidden="true">✳</span>
+        <span>ПРАКТИЧНАЯ ИНЖЕНЕРИЯ</span>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">01 <span></span> ОБО МНЕ</p>
+          <h2 id="about-title">Меньше рутины.<br><span>Больше порядка.</span></h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-text reveal">
+            <p>Мне интересно превращать повторяющиеся технические задачи в понятные инструменты — от небольших скриптов до последовательных сценариев обслуживания.</p>
+            <p>Работаю с Python, Bash и PowerShell, уделяю внимание предсказуемости изменений, удобству использования и проверке результата.</p>
+            <a class="text-link" href="https://github.com/Ba4ana" target="_blank" rel="noopener noreferrer">Мой GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="values-grid">
+            <article class="value-card reveal">
+              <span class="value-number">01 /</span><span class="value-icon" aria-hidden="true">◇</span>
+              <h3>Ясность</h3>
+              <p>Простая структура и решения, которые легко понять и поддерживать.</p>
+            </article>
+            <article class="value-card reveal">
+              <span class="value-number">02 /</span><span class="value-icon" aria-hidden="true">⌁</span>
+              <h3>Автоматизация</h3>
+              <p>Меньше ручных шагов там, где процесс можно надёжно повторить.</p>
+            </article>
+            <article class="value-card reveal">
+              <span class="value-number">03 /</span><span class="value-icon" aria-hidden="true">✓</span>
+              <h3>Проверка</h3>
+              <p>Внимание к деталям и результатам, а не только к выполнению команды.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section stack-section" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section-heading compact reveal">
+          <p class="section-kicker">02 <span></span> ИНСТРУМЕНТЫ</p>
+          <h2 id="stack-title">Технологии, <span>с которыми работаю.</span></h2>
+          <p>Выбираю инструменты под задачу, а не наоборот.</p>
+        </div>
+        <ul class="skills-list reveal" aria-label="Технологии">
+          <li><span class="skill-icon skill-python" aria-hidden="true">Py</span><span>Python</span></li>
+          <li><span class="skill-icon skill-bash" aria-hidden="true">&gt;_</span><span>Bash</span></li>
+          <li><span class="skill-icon skill-ps" aria-hidden="true">PS</span><span>PowerShell</span></li>
+          <li><span class="skill-icon skill-linux" aria-hidden="true">Lx</span><span>Linux</span></li>
+          <li><span class="skill-icon skill-windows" aria-hidden="true">⊞</span><span>Windows</span></li>
+          <li><span class="skill-icon skill-git" aria-hidden="true">⑂</span><span>Git</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading projects-heading reveal">
+          <div>
+            <p class="section-kicker">03 <span></span> ПРОЕКТЫ</p>
+            <h2 id="projects-title">Что можно <span>посмотреть.</span></h2>
+          </div>
+          <a class="text-link" href="https://github.com/Ba4ana?tab=repositories" target="_blank" rel="noopener noreferrer">Все открытые репозитории <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-primary reveal">
+            <div class="project-head">
+              <span class="project-label"><span class="label-dot" aria-hidden="true"></span> ОТКРЫТЫЙ ПРОЕКТ</span>
+              <span class="project-number">01</span>
+            </div>
+            <div class="project-graphic project-graphic-one" aria-hidden="true">
+              <span class="graphic-stroke">W<span>/</span></span>
+              <span class="graphic-caption">АВТОМАТИЗАЦИЯ</span>
+            </div>
+            <div class="project-content">
+              <h3>Winbuff</h3>
+              <p>Набор утилит для подготовки и обслуживания Windows и Debian: сценарии настройки, обновления и повседневного администрирования.</p>
+              <div class="project-tags" aria-label="Технологии проекта"><span>Python</span><span>PowerShell</span><span>Bash</span></div>
+              <a class="project-link" href="https://github.com/Ba4ana/winbuff" target="_blank" rel="noopener noreferrer" aria-label="Открыть репозиторий Winbuff на GitHub">
+                Смотреть исходники <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card project-secondary reveal">
+            <div class="project-head">
+              <span class="project-label"><span class="label-dot" aria-hidden="true"></span> ЭТОТ САЙТ</span>
+              <span class="project-number">02</span>
+            </div>
+            <div class="project-graphic project-graphic-two" aria-hidden="true">
+              <div class="browser-drawing">
+                <div class="browser-drawing-top"><i></i><i></i><i></i></div>
+                <div class="browser-drawing-body">
+                  <span class="draw-heading"></span><span class="draw-line"></span>
+                  <span class="draw-line short"></span><span class="draw-button"></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Ba4ana.github.io</h3>
+              <p>Персональная страница с адаптивной вёрсткой, лёгкими анимациями и открытым исходным кодом. Никаких тяжёлых библиотек.</p>
+              <div class="project-tags" aria-label="Технологии проекта"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <a class="project-link" href="https://github.com/Ba4ana/Ba4ana.github.io" target="_blank" rel="noopener noreferrer" aria-label="Открыть исходный код этого сайта на GitHub">
+                Смотреть исходники <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-decoration" aria-hidden="true">B.</div>
+          <p class="section-kicker">04 <span></span> КОНТАКТЫ</p>
+          <h2 id="contact-title">Обсудим <span>идею?</span></h2>
+          <p>Открыт к интересным техническим задачам и обмену опытом. Найти мои публичные проекты и связаться со мной можно через GitHub.</p>
+          <div class="contact-links">
+            <a class="button button-light" href="https://github.com/Ba4ana" target="_blank" rel="noopener noreferrer">Мой GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="https://winbuff.ru/" target="_blank" rel="noopener noreferrer">Winbuff.ru <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#top">BA4ANA<span>.</span></a>
+      <p>© <span id="current-year">2026</span> Бачана. Разработка и автоматизация.</p>
+      <a href="#top" class="back-to-top">Наверх <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
+</html>
